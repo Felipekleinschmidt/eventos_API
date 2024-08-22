@@ -14,9 +14,9 @@ public class IngressoController {
     @Autowired
     private IngressoRepository ingresssoRepository;
 
-    @GetMapping(name = "/todos")
+    @GetMapping("todos")
     public List<Ingresso> getTodosIngresso() {return ingresssoRepository.findAll();}
-    @PostMapping(name = "/add")
+    @PostMapping("add")
     public Ingresso addIngresso(@RequestBody Ingresso ingresso) {
     ingresssoRepository.save(ingresso);
         return ingresso;

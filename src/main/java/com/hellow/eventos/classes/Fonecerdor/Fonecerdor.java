@@ -12,8 +12,8 @@ import lombok.Setter;
 import java.util.Date;
 
 
-@Table(name="Fonecedor")
-@Entity(name="Fonecedor")
+@Table(name="fonecerdor")
+@Entity(name="fonecerdor")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,16 +23,16 @@ public class Fonecerdor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Fonecerdor;
+    @Column(name = "id")
+    private int Fonecerdor_id;
 
-    private String id;
     private String nome;
     private String cnpj;
     private String ativo;
-    private String endereco_id;
-
-
     @ManyToOne
-    @JoinColumn(name="id_tipo")
-    private Tipo tipo_id;
+    @JoinColumn(name = "endereco_id")
+    private Endereco endereco_id;
+    @ManyToOne
+    @JoinColumn(name="tipo_id")
+    private Tipo tipo;
 }

@@ -31,7 +31,7 @@ private Integer id_usuario;
     private String cpf;
 
     @ManyToOne
-    @JoinColumn(name="id_tipo")
+    @JoinColumn(name="tipo_id")
     private Tipo tipo;
 
 }

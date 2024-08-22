@@ -13,12 +13,12 @@ public class EnderecoController {
    @Autowired
     private  EnderecoRepository enderecoRepository;
 
-    @GetMapping(name="/todos")
+    @GetMapping("todos")
     public List<Endereco> getTodosEndereco(){
         return enderecoRepository.findAll();
     }
 
-    @PostMapping(name="/add")
+    @PostMapping("add")
     public Endereco addEndereco(@RequestBody Endereco endereco){
         enderecoRepository.save(endereco);
         return endereco;

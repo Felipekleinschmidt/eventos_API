@@ -14,7 +14,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @GetMapping(name = "/todos")
+    @GetMapping("todos")
     public List<Usuario> getTodosUsuario() {
         return usuarioRepository.findAll();
     }

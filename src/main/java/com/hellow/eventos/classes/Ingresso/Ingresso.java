@@ -1,6 +1,7 @@
 package com.hellow.eventos.classes.Ingresso;
 
 
+import com.hellow.eventos.classes.evento.Evento;
 import com.hellow.eventos.classes.tipo.Tipo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,17 +21,19 @@ public class Ingresso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer id_ingresso;
+    private Integer ingresso_id;
     private String  valor_base;
     private String meia;
     private String social;
     private String valor_pago;
     private String pago;
     private String vip;
-    private String evento_id;
-    private String tipo_id;
 
     @ManyToOne
-    @JoinColumn(name="id_tipo")
-    private Tipo tipo;
+    @JoinColumn( name = "evento_id")
+    private Evento evento_id;
+
+    @ManyToOne
+    @JoinColumn(name = "tipo_id")
+    private Tipo tipo_id;
 }

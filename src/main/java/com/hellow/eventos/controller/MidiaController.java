@@ -15,10 +15,10 @@ public class MidiaController {
     @Autowired
     private MidiaRepository midiaRepository;
 
-    @GetMapping(name ="/todos")
+    @GetMapping("todos")
     public List<Midia> getTodosMidia() {return midiaRepository.findAll(); }
 
-    @PostMapping(name ="add")
+    @PostMapping("add")
     public Midia addMidia(@RequestBody Midia midia){
         midiaRepository.save(midia);
         return midia;

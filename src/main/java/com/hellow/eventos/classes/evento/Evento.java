@@ -19,17 +19,18 @@ import java.util.Date;
 public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_evento;
+    @Column(name="id")
+    private int evento_id;
 
     private String nome;
     private Date data;
     private String descricao;
     private int lotacao;
     @ManyToOne
-    @JoinColumn(name="id_endereco")
+    @JoinColumn(name="endereco_id")
     private Endereco endereco_id;
     @ManyToOne
-    @JoinColumn(name="id_tipo")
+    @JoinColumn(name="tipo_id")
     private Tipo tipo_id;
 
 }

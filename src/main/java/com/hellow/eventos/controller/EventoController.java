@@ -13,7 +13,7 @@ public class EventoController {
     @Autowired
     private EventoRepository eventoRepository;
 
-    @GetMapping(name="/todos")
+    @GetMapping("todos")
     public List<Evento> getTodosEventos(){
         return eventoRepository.findAll();
     }

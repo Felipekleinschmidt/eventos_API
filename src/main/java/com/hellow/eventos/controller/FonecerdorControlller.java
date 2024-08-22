@@ -16,9 +16,9 @@ public class FonecerdorControlller {
     @Autowired
     private FonecerdorRepository fonecerdorRepository;
 
-    @GetMapping(name = "/todos")
+    @GetMapping("todos")
     public List<Fonecerdor> getTodosFonecerdor() {return fonecerdorRepository.findAll();}
-    @PostMapping(name = "/add")
+    @PostMapping(name = "add")
     public Fonecerdor addFonecerdor(@RequestBody Fonecerdor fonecerdor) {
         fonecerdorRepository.save(fonecerdor);
         return fonecerdor;
